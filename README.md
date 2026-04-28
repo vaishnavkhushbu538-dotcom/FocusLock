@@ -1,63 +1,65 @@
+
 # 🔒 FocusLock
 
 **FocusLock** is a smart parental control app that helps students stay focused during exams by limiting game and app usage.
 
-It tracks selected applications and automatically locks them when the time limit is exceeded.
+It tracks selected applications and automatically closes them when the time limit is exceeded.
+
+---
+
+## 📸 App Preview
+
+![FocusLock Screenshot](https://github.com/vaishnavkhushbu538-dotcom/FocusLock/blob/main/FocusLock%20Pro%204_28_2026%2010_34_55%20AM%20\(1\).png)
 
 ---
 
 ## 🚀 Features
 
-* ⏱️ Set time limit for app usage
-* 🎮 Select specific apps to track
+* ⏱️ Set time limit for apps
+* 🎮 Select specific apps (multi-select)
 * 📊 Real-time usage tracking
 * 🔒 Auto-close apps after time limit
-* ⚠️ Warning message when time is over
-* 🎨 Simple and clean dark UI
+* ⚠️ Warning when time is over
+* 🎨 Clean dark UI
 
 ---
 
 ## 🧠 How It Works
 
-1. Parent/user sets a time limit
+1. User sets a time limit
 2. Selects apps (games, etc.)
-3. App tracks usage in real-time
-4. When time is over → selected apps are automatically closed
+3. FocusLock tracks usage
+4. When time is over → apps are automatically closed
 
 ---
 
 ## ▶️ How to Use
 
-1. Open the apps/games you want to track or block
+1. Open the apps/games you want to track
 
-2. Run the app:
+2. Run:
 
-   ```bash
-   python focuslock.py
-   ```
+```bash
+python focuslock.py
+```
 
-3. Click on **"Load Running Apps"**
+3. Click **Load Running Apps**
 
-4. Select apps
-   *(Use CTRL + Click for multiple selection)*
+4. Select apps (CTRL + Click)
 
-5. Enter time (in minutes)
+5. Enter time (minutes)
 
-6. Click **"Start Focus"**
+6. Click **Start Focus**
 
-7. The app will:
-
-   * Track usage ⏱️
-   * Show remaining time 📊
-   * Lock apps after limit 🔒
+7. App will track and lock apps after time limit
 
 ---
 
 ## ⚠️ Important Notes
 
-* Only **running apps** will be shown
-* Open your target app before loading apps
-* Closing this program will stop tracking
+* Only running apps will be shown
+* Open apps before loading list
+* Closing FocusLock will stop tracking
 
 ---
 
@@ -75,12 +77,6 @@ It tracks selected applications and automatically locks them when the time limit
 pip install psutil
 ```
 
-Run the app:
-
-```bash
-python focuslock.py
-```
-
 ---
 
 ## 📂 Project Structure
@@ -89,35 +85,21 @@ python focuslock.py
 FocusLock/
 │── focuslock.py
 │── README.md
+│── screenshot.png
 ```
 
 ---
 
 ## 🎯 Future Improvements
 
-* 🔐 Password protection (parent control)
-* ⛔ Stronger app blocking system
-* 📊 Usage analytics dashboard
-* 🎨 Modern UI redesign
+* 🔐 Password protection
+* ⛔ Stronger blocking system
+* 📊 Usage analytics
 * 📱 Android version
-
----
-
-## 🌍 Use Cases
-
-* Students preparing for exams 📚
-* Parents controlling screen time 👨‍👩‍👧
-* Anyone who wants better focus 🎯
-
----
-
-## ⚡ Motivation
-
-> "Discipline is choosing what you want most over what you want now."
 
 ---
 
 ## 👨‍💻 Author
 
 **Harsh Vaishnav**
-🚀 Aspiring Software Engineer & AI Builder
+🚀 Future Software Engineer
