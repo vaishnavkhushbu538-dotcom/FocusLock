@@ -9,13 +9,19 @@ time_limit = 0
 used_time = 0
 selected_apps = []
 
-# 🔍 Load running apps
+# ❌ Ignore system apps
+IGNORE_APPS = [
+    "System Idle Process", "System", "explorer.exe",
+    "svchost.exe", "SearchApp.exe", "RuntimeBroker.exe"
+]
+
+# 🔍 Load apps
 def load_apps():
     apps = []
     for proc in psutil.process_iter(['name']):
         try:
             name = proc.info['name']
-            if name and name not in apps:
+            if name and name not in apps and name not in IGNORE_APPS:
                 apps.append(name)
         except:
             pass
@@ -24,7 +30,7 @@ def load_apps():
     for app in sorted(apps):
         listbox.insert(tk.END, app)
 
-# ▶️ Start tracking
+# ▶️ Start
 def start_timer():
     global running, time_limit, used_time, selected_apps
 
@@ -68,7 +74,7 @@ def track_usage():
                         except:
                             pass
 
-                        messagebox.showwarning("Time Over", "Selected apps are now locked!")
+                        messagebox.showwarning("Time Over", "Apps are now locked!")
                         running = False
                         return
             except:
@@ -76,40 +82,34 @@ def track_usage():
 
         time.sleep(1)
 
-# 🧱 GUI
+# 🎨 GUI
 root = tk.Tk()
 root.title("FocusLock Pro")
 root.geometry("400x520")
 root.configure(bg="#1e1e2f")
 
-# Title
 title = tk.Label(root, text="🔒 FocusLock", fg="white", bg="#1e1e2f",
                  font=("Arial", 18, "bold"))
 title.pack(pady=10)
 
-# Time input
 tk.Label(root, text="Enter Time (minutes):",
          fg="white", bg="#1e1e2f").pack()
 
 entry = tk.Entry(root, justify="center")
 entry.pack(pady=5)
 
-# Load apps button
 tk.Button(root, text="Load Running Apps",
           command=load_apps,
           bg="#4CAF50", fg="white").pack(pady=5)
 
-# App list
 listbox = tk.Listbox(root, selectmode=tk.MULTIPLE,
                      height=12, bg="#2b2b3c", fg="white")
 listbox.pack(pady=10, fill="both", expand=True)
 
-# Start button
 tk.Button(root, text="Start Focus",
           command=start_timer,
           bg="#2196F3", fg="white").pack(pady=10)
 
-# Status
 status_label = tk.Label(root, text="Status: Idle",
                         fg="white", bg="#1e1e2f")
 status_label.pack(pady=10)
